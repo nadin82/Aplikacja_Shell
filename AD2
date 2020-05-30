@@ -1,0 +1,11 @@
+add_object a1 -below A1
+add_object a2 -below A1
+add_object a3 -below A1
+add_object a4 -below A1
+add_object a5 -below A1
+add_object a6 -below A1
+add_object a7 -below A1
+add_object a8 -below A1
+add_object a9 -below A1
+add_object a10 -below A1
+display_object
