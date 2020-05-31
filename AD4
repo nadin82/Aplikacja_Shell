@@ -1,0 +1,39 @@
+puts "Test 4"
+puts "Przypadek negatywny dodawanie objectow "
+if {[catch {add_object .}]} {
+    puts "Nie mozna wprowadzic objektu o nazwie ."
+} else {
+    puts "Mozna wprowadzic objektu o nazwie ."
+}
+if {[catch {add_object -a}]} {
+    puts "Nie mozna wprowadzic objektu o nazwie -a"
+} else {
+    puts "Mozna wprowadzic objektu o nazwie -a"
+}
+if {[catch {add_object a/}]} {
+    puts "Nie mozna wprowadzic objektu o nazwie a/"
+} else {
+    puts "Mozna wprowadzic objektu o nazwie a/"
+}
+if {[catch {add_object a_}]} {
+    puts "Nie mozna wprowadzic objektu o nazwie a_"
+} else {
+    puts "Mozna wprowadzic objektu o nazwie a_"
+}
+if {[catch {add_object 1!}]} {
+    puts "Nie mozna wprowadzic objektu o nazwie 1!"
+} else {
+    puts "Mozna wprowadzic objektu o nazwie 1!"
+}
+if {[catch {add_object add_object}]} {
+    puts "Nie mozna wprowadzic objektu o nazwie add_object"
+} else {
+    puts "Mozna wprowadzic objektu o nazwie add_object"
+}
+if {[catch {add_object _object}]} {
+    puts "Nie mozna wprowadzic objektu o nazwie _object"
+} else {
+    puts "Mozna wprowadzic objektu o nazwie _object"
+}
+display_object
+delete_object
