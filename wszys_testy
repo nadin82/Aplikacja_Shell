@@ -1,0 +1,103 @@
+puts "Test1"
+puts "Prypadek pozytywny rozbudowanie poziomowo"
+for {set i 1} {$i<101} {incr i} {
+    if {[catch {add_object A$i}]} {
+	puts "Nie mozna wprowadzic objektu o nazwie A$i"
+    } else {
+	puts "Mozna wprowadzic objekt o nazwie A$i"
+    }
+}
+display_object
+delete_object
+puts "Test 2"
+puts "Przypadek sprawdza czy mozemy miec 4 poziomy w dol"
+if {[catch {add_object A}]} {
+    puts "Nie mozna wprowadzac na pierwszym poziomie objekt A"
+} else {
+    puts "Mozna wprowadzac na pierwszym poziomie objekt A"
+}
+if {[catch {add_object a -below  A}]} {
+    puts "Nie mozna wprowadzac na drugim poziomie objekt a"
+} else {
+    puts "Mozna wprowadzac na drugim  poziomie objekt a"
+}
+if {[catch {add_object aa -below A/a}]} {
+    puts "Nie mozna wprowadzac na trzecim  poziomie objekt aa"
+} else {
+    puts "Mozna wprowadzac na trzecim poziomie objekt aa"
+}
+if {[catch {add_object aaa -below}]} {
+    puts "Nie mozna wprowadzac na czwartym poziomie objekt aaa"
+} else {
+    puts "Mozna wprowadzac na pierwszym poziomie objekt aaa"
+}
+display_object
+delete_object
+puts "Test3"
+puts "Usuwanie objektow z roznych poziomow hierarchii"
+add_object ABC
+add_object ab -below ABC
+add_object cd -below ABC
+add_object a -below ABC/ab
+add_object b -below ABC/ab
+add_object CDE
+add_object de -below CDE
+add_object ce -below CDE
+add_object e -below CDE/de
+add_object d -below CDE/de
+puts "PO DODANIU"
+display_object 
+if {[catch {delete_object a -below ABC/ab}]} {
+    puts "Nie mozna usunac pojedynczy objekt z trzeciego poziomu"
+} else { 
+    puts "Mozna usunac pojedynczy objekt z trzeciego poziomu"
+}
+puts "PO USUNIENCZU z 3 poziomu"
+display_object
+if {[catch {delete_object CDE}]} {
+    puts "Nie mozna usunac objekt CDE z pierwszego poziomu"
+} else {
+    puts "Mozna usunac objekt CDE z pirwszego poziomu"
+}
+puts "PO USUNIENCZU z 1 poziomu"
+display_object
+delete_object
+puts "Test 4"
+puts "Przypadek negatywny dodawanie objectow "
+if {[catch {add_object .}]} {
+    puts "Nie mozna wprowadzic objektu o nazwie ."
+} else {
+    puts "Mozna wprowadzic objektu o nazwie ."
+}
+if {[catch {add_object -a}]} {
+    puts "Nie mozna wprowadzic objektu o nazwie -a"
+} else {
+    puts "Mozna wprowadzic objektu o nazwie -a"
+}
+if {[catch {add_object a/}]} {
+    puts "Nie mozna wprowadzic objektu o nazwie a/"
+} else {
+    puts "Mozna wprowadzic objektu o nazwie a/"
+}
+if {[catch {add_object a_}]} {
+    puts "Nie mozna wprowadzic objektu o nazwie a_"
+} else {
+    puts "Mozna wprowadzic objektu o nazwie a_"
+}
+if {[catch {add_object 1!}]} {
+    puts "Nie mozna wprowadzic objektu o nazwie 1!"
+} else {
+    puts "Mozna wprowadzic objektu o nazwie 1!"
+}
+if {[catch {add_object add_object}]} {
+    puts "Nie mozna wprowadzic objektu o nazwie add_object"
+} else {
+    puts "Mozna wprowadzic objektu o nazwie add_object"
+}
+if {[catch {add_object _object}]} {
+    puts "Nie mozna wprowadzic objektu o nazwie _object"
+} else {
+    puts "Mozna wprowadzic objektu o nazwie _object"
+}
+display_object
+delete_object
