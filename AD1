@@ -1,21 +1,5 @@
-add_object A1
-add_object A2
-add_object A3
-add_object A4
-add_object A5
-add_object A6
-add_object A7
-add_object A8
-add_object A9
-add_object A10
-add_object A11
-add_object A12
-add_object A13
-add_object A14
-add_object A15
-add_object A16
-add_object A17
-add_object A18
-add_object A19
-add_object A20
+for {set i 0} {$i<10} {incr i} {
+    add_object A$i
+}
 display_object
+delete_object
