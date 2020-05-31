@@ -1,11 +1,11 @@
-add_object aa1 -below A1/a1
-add_object aa2 -below A1/a1
-add_object aa3 -below A1/a1
-add_object aa4 -below A1/a1
-add_object aa5 -below A1/a1
-add_object aa6 -below A1/a1
-add_object aa7 -below A1/a1
-add_object aa8 -below A1/a1
-add_object aa9 -below A1/a1
-add_object aa10 -below A1/a1
+add_object ABC
+add_object ab -below ABC
+add_object cd -below ABC
+add_object a -below ABC/ab
+add_object b -below ABC/ab
+add_object CDE
+add_object de -below CDE
+add_object ce -below CDE
+add_object e -below CDE/de
+add_object d -below CDE/de
 display_object
