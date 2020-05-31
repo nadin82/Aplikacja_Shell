@@ -1,5 +1,11 @@
-for {set i 0} {$i<10} {incr i} {
-    add_object A$i
+puts "Test1"
+puts "Prypadek pozytywny rozbudowanie poziomowo"
+for {set i 1} {$i<101} {incr i} {
+    if {[catch {add_object A$i}]} {
+	puts "Nie mozna wprowadzic objektu o nazwie A$i"
+    } else {
+	puts "Mozna wprowadzic objekt o nazwie A$i"
+    }
 }
 display_object
 delete_object
