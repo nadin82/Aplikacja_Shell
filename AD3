@@ -1,3 +1,5 @@
+puts "Test3"
+puts "Usuwanie objektow z roznych poziomow hierarchii"
 add_object ABC
 add_object ab -below ABC
 add_object cd -below ABC
@@ -8,4 +10,20 @@ add_object de -below CDE
 add_object ce -below CDE
 add_object e -below CDE/de
 add_object d -below CDE/de
+puts "PO DODANIU"
+display_object 
+if {[catch {delete_object a -below ABC/ab}]} {
+    puts "Nie mozna usunac pojedynczy objekt z trzeciego poziomu"
+} else { 
+    puts "Mozna usunac pojedynczy objekt z trzeciego poziomu"
+}
+puts "PO USUNIENCZU z 3 poziomu"
 display_object
+if {[catch {delete_object CDE}]} {
+    puts "Nie mozna usunac objekt CDE z pierwszego poziomu"
+} else {
+    puts "Mozna usunac objekt CDE z pirwszego poziomu"
+}
+puts "PO USUNIENCZU z 1 poziomu"
+display_object
+delete_object
