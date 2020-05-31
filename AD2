@@ -1,11 +1,24 @@
-add_object a1 -below A1
-add_object a2 -below A1
-add_object a3 -below A1
-add_object a4 -below A1
-add_object a5 -below A1
-add_object a6 -below A1
-add_object a7 -below A1
-add_object a8 -below A1
-add_object a9 -below A1
-add_object a10 -below A1
+puts "Test 2"
+puts "Przypadek sprawdza czy mozemy miec 4 poziomy w dol"
+if {[catch {add_object A}]} {
+    puts "Nie mozna wprowadzac na pierwszym poziomie objekt A"
+} else {
+    puts "Mozna wprowadzac na pierwszym poziomie objekt A"
+}
+if {[catch {add_object a -below  A}]} {
+    puts "Nie mozna wprowadzac na drugim poziomie objekt a"
+} else {
+    puts "Mozna wprowadzac na drugim  poziomie objekt a"
+}
+if {[catch {add_object aa -below A/a}]} {
+    puts "Nie mozna wprowadzac na trzecim  poziomie objekt aa"
+} else {
+    puts "Mozna wprowadzac na trzecim poziomie objekt aa"
+}
+if {[catch {add_object aaa -below}]} {
+    puts "Nie mozna wprowadzac na czwartym poziomie objekt aaa"
+} else {
+    puts "Mozna wprowadzac na pierwszym poziomie objekt aaa"
+}
 display_object
+delete_object
